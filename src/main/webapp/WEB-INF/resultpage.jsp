@@ -17,7 +17,16 @@
         <div>
             <h2>BMI Result</h2>
 
-            <p> Her kommer resultaterne.</p>
+           <p>Din højde er ${requestScope.height} cm<br/>
+               Din vægt er ${requestScope.weight} kg</p>
+            <p/>
+
+            Dit BMI er beregnet til ${requestScope.bmi}
+            </p>
+            <p>
+                Du er ${requestScope.category}
+
+            </p>
 
         </div>
 
