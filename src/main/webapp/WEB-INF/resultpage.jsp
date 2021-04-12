@@ -14,6 +14,11 @@
 
     <jsp:body>
 
+        <div class="row">
+        <div class="col-sm-4"> </div>
+
+        <div class="col-sm-4">
+
         <div>
             <h2>BMI Result</h2>
 
@@ -27,7 +32,9 @@
                 Du er ${requestScope.category}
 
             </p>
-
+            <div class="col-sm-4"> </div>
+        </div>
+            </div>
         </div>
 
     </jsp:body>
