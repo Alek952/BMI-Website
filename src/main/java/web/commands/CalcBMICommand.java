@@ -5,6 +5,8 @@ import business.services.BmiUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
+import java.util.List;
 
 public class CalcBMICommand extends CommandUnprotectedPage{
 
@@ -19,6 +21,16 @@ public class CalcBMICommand extends CommandUnprotectedPage{
         Double weight = 0.0;
         Double bmi = 0.0;
         String category = "";
+        String gender = request.getParameter("gender");
+        int sport_id = Integer.parseInt(request.getParameter("sport"));
+
+        String[] hobbies = request.getParameterValues("hobby");
+        List<String> hobbylist = null;
+        if (hobbies != null)
+        {
+            hobbylist = Arrays.asList(hobbies);
+        }
+
 
         try {
 
@@ -42,6 +54,10 @@ public class CalcBMICommand extends CommandUnprotectedPage{
         request.setAttribute("height", height);
         request.setAttribute("weight", weight);
         request.setAttribute("category", category);
+        request.setAttribute("gender", gender);
+        request.setAttribute("sport_id", sport_id);
+        request.setAttribute("hobbies", hobbylist);
+
 
         return pageToShow;
     }
